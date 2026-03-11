@@ -64,8 +64,14 @@
             cursor: not-allowed;
         }
 
-        #form-status {
-            display: none;
+        .success-state {
+            background: #10b981 !important;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .bot-instruction {
+            border-left: 3px solid var(--accent-blue);
+            background: rgba(59, 130, 246, 0.05);
         }
     </style>
 </head>
@@ -230,7 +236,21 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-4xl font-bold mb-6 text-white">Готові почати?</h2>
-                <p class="text-gray-400 mb-8 text-lg">Залиште ваші контактні дані, і ми розробимо персоналізовану стратегію автоматизації для вашого бізнесу.</p>
+                <p class="text-gray-400 mb-8 text-lg">Заповніть форму, щоб ми могли зв'язатися з вами через Telegram та обговорити деталі.</p>
+                
+                <!-- Інструкція щодо бота -->
+                <div class="bot-instruction p-6 rounded-r-xl mb-8">
+                    <h4 class="text-blue-400 font-bold mb-2 flex items-center">
+                        <i class="fab fa-telegram-plane mr-2"></i> Важливо для зв'язку:
+                    </h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Щоб наш бот зміг надіслати вам відповідь, будь ласка, перейдіть за посиланням нижче та натисніть кнопку <span class="text-white font-mono">/start</span>.
+                    </p>
+                    <a href="https://t.me/test28n8n_bot" target="_blank" class="inline-block mt-4 text-sm font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-all">
+                        Перейти до бота @test28n8n_bot
+                    </a>
+                </div>
+
                 <div class="space-y-4 text-gray-300">
                     <div class="flex items-center space-x-4">
                         <i class="fas fa-envelope text-blue-500"></i>
@@ -240,26 +260,28 @@
             </div>
             
             <div class="glass-card p-8 rounded-2xl relative">
-                <div id="form-status" class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#0d0d0f]/95 rounded-2xl text-center p-6">
-                    <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Заявку надіслано!</h3>
-                    <p class="text-gray-400">Ми зв'яжемося з вами найближчим часом.</p>
-                    <button onclick="resetForm()" class="mt-6 text-sm text-blue-500 hover:underline">Надіслати ще раз</button>
-                </div>
-
-                <form id="automation-form" class="space-y-4">
-                    <div class="grid grid-cols-1 gap-4">
-                        <input type="text" id="form-name" required placeholder="Ваше ім'я" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
+                <form id="automation-form" class="space-y-5">
+                    <div class="space-y-1">
+                        <label for="form-name" class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Ваше ім'я</label>
+                        <input type="text" id="form-name" name="name" required placeholder="Наприклад: Олександр" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
                     </div>
                     
-                    <div class="grid grid-cols-1 gap-4">
-                        <!-- Об'єднане поле: Telegram або Email -->
-                        <input type="text" id="form-contact" required placeholder="Ваш Telegram або Email для зв'язку" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
+                    <div class="space-y-1">
+                        <label for="form-tg-id" class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Твій Telegram ID</label>
+                        <input type="text" id="form-tg-id" name="tg_user_id" required placeholder="Наприклад: 123456789" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
+                        <p class="text-[10px] text-gray-500 italic mt-1">
+                            <i class="fas fa-info-circle mr-1"></i> Як дізнатися свій ID? Напишіть <a href="https://t.me/userinfobot" target="_blank" class="text-blue-400 hover:underline">@userinfobot</a>
+                        </p>
                     </div>
                     
-                    <textarea id="form-message" placeholder="Розкажіть про ваше завдання" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition text-white"></textarea>
+                    <div class="space-y-1">
+                        <label for="form-message" class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Опис завдання</label>
+                        <textarea id="form-message" name="message" placeholder="Розкажіть про процеси, які потрібно автоматизувати" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition text-white"></textarea>
+                    </div>
                     
-                    <button type="submit" id="submit-btn" class="w-full cta-button py-4 rounded-lg font-bold text-white uppercase tracking-wider transition-all duration-300">Надіслати запит</button>
+                    <button type="submit" id="submit-btn" class="w-full cta-button py-4 rounded-lg font-bold text-white uppercase tracking-wider transition-all duration-300">
+                        Надіслати запит
+                    </button>
                 </form>
             </div>
         </div>
@@ -293,9 +315,14 @@
             });
         });
 
+        // Валідація: Тільки цифри для Telegram ID
+        const tgIdInput = document.getElementById('form-tg-id');
+        tgIdInput.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
         // Обробка форми
         const form = document.getElementById('automation-form');
-        const statusOverlay = document.getElementById('form-status');
         const submitBtn = document.getElementById('submit-btn');
 
         form.addEventListener('submit', async (e) => {
@@ -303,11 +330,12 @@
             
             const formData = {
                 name: document.getElementById('form-name').value,
-                contact: document.getElementById('form-contact').value, // Універсальне поле контакту
+                tg_user_id: document.getElementById('form-tg-id').value,
                 message: document.getElementById('form-message').value,
                 timestamp: new Date().toISOString()
             };
 
+            const originalBtnText = submitBtn.innerText;
             submitBtn.disabled = true;
             submitBtn.innerText = 'Відправка...';
 
@@ -319,22 +347,27 @@
                 });
 
                 if (response.ok) {
-                    statusOverlay.style.display = 'flex';
+                    submitBtn.innerText = 'Відправлено!';
+                    submitBtn.classList.add('success-state');
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.classList.remove('success-state');
+                        submitBtn.disabled = false;
+                    }, 5000);
+
                 } else {
                     alert('Помилка сервера. Спробуйте ще раз пізніше.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
                 }
             } catch (error) {
                 alert('Помилка з’єднання. Перевірте доступ до мережі.');
-            } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Надіслати запит';
+                submitBtn.innerText = originalBtnText;
             }
         });
-
-        function resetForm() {
-            form.reset();
-            statusOverlay.style.display = 'none';
-        }
     </script>
 
 </body>
