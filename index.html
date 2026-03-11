@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation Expert | Smart Business Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0c;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+            transform: scale(1.02);
+        }
+
+        .cta-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        #form-status {
+            display: none;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Навігація -->
+    <nav class="fixed w-full z-50 py-6 px-8 border-b border-white/5 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter uppercase">
+                MELEHANYCH<span class="text-blue-500">.AI</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#services" class="nav-link hover:text-white transition">Послуги</a>
+                <a href="#advantages" class="nav-link hover:text-white transition">Переваги</a>
+                <a href="#contact" class="nav-link hover:text-white transition">Контакти</a>
+            </div>
+            <a href="#contact" class="nav-link px-6 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition duration-300">Обговорити проєкт</a>
+        </div>
+    </nav>
+
+    <!-- Hero Секція -->
+    <section class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="hero-glow top-1/4 left-1/4"></div>
+        <div class="hero-glow bottom-1/4 right-1/4"></div>
+        
+        <div class="max-w-4xl text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest">
+                n8n & AI Automation Specialist
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
+                Масштабуйте бізнес за допомогою <br>
+                <span class="gradient-text">AI-автоматизації</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Трансформуємо рутинні процеси у високоефективні цифрові екосистеми на базі n8n та штучного інтелекту.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="nav-link cta-button px-8 py-4 rounded-xl font-bold text-lg text-white">Замовити аудит</a>
+                <a href="#services" class="nav-link px-8 py-4 rounded-xl font-bold text-lg border border-white/10 hover:bg-white/5 transition">Наші послуги</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція переваг -->
+    <section id="advantages" class="py-24 px-6 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Чому варто обрати автоматизацію?</h2>
+                <p class="text-gray-400">Створіть систему, яка працює безпомилково, поки ви фокусуєтесь на стратегії.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-infinity text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Гнучкість n8n</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Повний контроль над логікою та даними без обмежень застарілих хмарних сервісів.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-purple-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Індивідуальна логіка</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Архітектура, побудована під ваші унікальні бізнес-процеси, а не навпаки.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Економія ресурсів</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Звільняємо до 80% операційного часу вашої команди за рахунок AI.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Швидке масштабування</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Система витримує будь-яке навантаження при зростанні кількості замовлень.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція послуг -->
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold mb-4">Напрямки автоматизації</h2>
+                <p class="text-gray-400 text-lg">Експертні рішення для вашого технологічного прориву.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-blue-500">
+                    <i class="fas fa-warehouse text-3xl mb-6 text-blue-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">Складські запаси</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Синхронізація залишків</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Сповіщення про закупівлю</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Інтеграція з маркетплейсами</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-sky-500">
+                    <i class="fab fa-telegram text-3xl mb-6 text-sky-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">AI Telegram Боти</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Розумна підтримка клієнтів</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Корпоративні чат-боти</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Управління через LLM</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-purple-500">
+                    <i class="fas fa-sync text-3xl mb-6 text-purple-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">CRM Автоматизація</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Автоматична лідогенерація</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> AI-збагачення контактів</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Розумні воронки продажів</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-emerald-500">
+                    <i class="fas fa-database text-3xl mb-6 text-emerald-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">Бази Даних</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> SQL, Airtable, Notion</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Масове очищення даних</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Автоматичні звіти</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-orange-500">
+                    <i class="fas fa-user-shield text-3xl mb-6 text-orange-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">Контроль якості</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> AI-аналіз чатів</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Моніторинг дзвінків</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Авто-оцінка менеджерів</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-pink-500">
+                    <i class="fas fa-pen-nib text-3xl mb-6 text-pink-500"></i>
+                    <h3 class="text-2xl font-bold mb-4">AI Копірайтер</h3>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Генерація SEO-текстів</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Створення постів та листів</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Унікальний Tone-of-voice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section id="contact" class="py-24 px-8 border-t border-white/5 bg-[#0d0d0f]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 text-white">Готові почати?</h2>
+                <p class="text-gray-400 mb-8 text-lg">Залиште ваші контактні дані, і ми розробимо персоналізовану стратегію автоматизації для вашого бізнесу.</p>
+                <div class="space-y-4 text-gray-300">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-envelope text-blue-500"></i>
+                        <span>contact@melehanych.ai</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card p-8 rounded-2xl relative">
+                <div id="form-status" class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#0d0d0f]/95 rounded-2xl text-center p-6">
+                    <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Заявку надіслано!</h3>
+                    <p class="text-gray-400">Ми зв'яжемося з вами найближчим часом.</p>
+                    <button onclick="resetForm()" class="mt-6 text-sm text-blue-500 hover:underline">Надіслати ще раз</button>
+                </div>
+
+                <form id="automation-form" class="space-y-4">
+                    <div class="grid grid-cols-1 gap-4">
+                        <input type="text" id="form-name" required placeholder="Ваше ім'я" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Об'єднане поле: Telegram або Email -->
+                        <input type="text" id="form-contact" required placeholder="Ваш Telegram або Email для зв'язку" class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition w-full text-white">
+                    </div>
+                    
+                    <textarea id="form-message" placeholder="Розкажіть про ваше завдання" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-sm focus:border-blue-500 outline-none transition text-white"></textarea>
+                    
+                    <button type="submit" id="submit-btn" class="w-full cta-button py-4 rounded-lg font-bold text-white uppercase tracking-wider transition-all duration-300">Надіслати запит</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="py-12 px-8 border-t border-white/5 text-center">
+        <div class="text-sm text-gray-500 font-bold uppercase tracking-widest">
+            MELEHANYCH<span class="text-blue-500">.AI</span>
+        </div>
+        <div class="text-xs text-gray-600 mt-4">© 2024 AI Automation Studio. Всі права захищені.</div>
+    </footer>
+
+    <script>
+        // Плавна прокрутка
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Обробка форми
+        const form = document.getElementById('automation-form');
+        const statusOverlay = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('form-name').value,
+                contact: document.getElementById('form-contact').value, // Універсальне поле контакту
+                message: document.getElementById('form-message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Відправка...';
+
+            try {
+                const response = await fetch('https://n8n-nazar.up.railway.app/webhook/form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    statusOverlay.style.display = 'flex';
+                } else {
+                    alert('Помилка сервера. Спробуйте ще раз пізніше.');
+                }
+            } catch (error) {
+                alert('Помилка з’єднання. Перевірте доступ до мережі.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Надіслати запит';
+            }
+        });
+
+        function resetForm() {
+            form.reset();
+            statusOverlay.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
